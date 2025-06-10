@@ -1,0 +1,271 @@
+/* Variables de color para el tema claro y oscuro */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --button-bg: #4285f4;
+    --button-hover: #3367d6;
+  }
+  
+  /* Variables de color para el tema oscuro */
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --button-bg: #5d9cec;
+    --button-hover: #4a89dc;
+  }
+  
+  /* Estilos generales del cuerpo del documento */
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Estilos para los encabezados */
+  h1 {
+    text-align: center;
+  }
+  
+  /* Estilos para secciones y tarjetas */
+  .form-section, .partido, .auth-container, .estadistica-seccion {
+    background: var(--card-bg);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para inputs, selects y botones */
+  input, select, button {
+    padding: 8px;
+    margin: 5px;
+  }
+  
+  /* Estilos para botones */
+  button {
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background: var(--button-hover);
+  }
+  
+  /* Estilos para botones específicos */
+  .solo-admin {
+    background: #cd1d1d;
+  }
+  
+  /* Estilos para el calendario */
+  #calendario {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para listas de jugadores */
+  .jugadores ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .jugadores li {
+    margin: 5px 0;
+  }
+  
+  /* Estilos para el botón de cambio de tema */
+  #toggleTema {
+    margin-top: 10px;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 768px) {
+    .form-section, .partido {
+      padding: 10px;
+    }
+  
+    input, button {
+      width: 90%;
+      margin: 7px ;
+    }
+  }
+  
+  /* Efectos de hover para partidos */
+  .partido {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .partido:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+/* Estilos para la información del usuario */
+.user-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  /* Estilos para el menú del usuario */
+  .user-menu {
+    display: none;
+    position: absolute;
+    left: 10px;
+    background: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+    width: 150px;
+    text-align: center;
+  }
+  
+  /* Estilos para los botones del menú del usuario */
+  .user-menu button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .user-menu button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el contenedor de autenticación */
+.auth-container {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 25px; 
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .auth-container h1 {
+    margin-bottom: 20px; 
+  }
+  
+  .auth-container input {
+    width: 80%; 
+    padding: 12px; 
+    margin: 12px auto; 
+    display: block; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-container button {
+    width: 80%;
+    padding: 12px; 
+    margin: 12px auto; 
+    display: block; 
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .auth-container p {
+    margin-top: 20px; 
+  }
+  
+  .auth-container a {
+    color: var(--button-bg);
+    text-decoration: none;
+  }
+  
+  .auth-container a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* Estilos para las tablas de estadísticas */
+  .tabla-estadisticas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .tabla-estadisticas th, .tabla-estadisticas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .tabla-estadisticas th {
+    background-color: var(--button-bg);
+    color: white;
+  }
+  
+  .tabla-estadisticas tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .tabla-estadisticas tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Estilos para el menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .dropdown-button {
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .dropdown-content button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dropdown-content button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu:hover .dropdown-content {
+    display: block;
+  }

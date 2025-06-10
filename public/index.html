@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pachangueo League</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/32/152/152226.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <!-- Menú desplegable en la esquina superior derecha -->
+ <header class="dropdown-menu">
+  <button class="dropdown-button" aria-label="Menú">☰</button>
+  <nav class="dropdown-content">
+    <button onclick="activarModoAdmin()">🔐 Entrar como admin</button>
+    <button id="toggleTema">🌙 Cambiar tema</button>
+    <a href="login.html"><button>Login</button></a>
+    <a href="registro.html"><button>Registro</button></a>
+  </nav>
+</header>
+
+<!-- Información del usuario -->
+<header class="user-info">
+  <span id="usuario-nombre" onclick="toggleMenu()">Bienvenido</span>
+  <nav id="user-menu" class="user-menu">
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </nav>
+</header>
+
+
+  <!-- Título principal -->
+  <h1>🏀 Organiza tu Pachanga 🏀</h1>
+
+  <!-- Navegación principal -->
+  <nav class="main-nav">
+    <button onclick="mostrarVista('partidos')">Partidos</button>
+    <button onclick="mostrarVista('calendario')">Calendario</button>
+    <button onclick="mostrarVista('estadisticas')">Estadísticas</button>
+  </nav>
+
+  <!-- Vista de Partidos -->
+  <section id="vista-partidos">
+    <h2>Listado de Partidos</h2>
+  </section>
+
+  <!-- Vista de Calendario -->
+  <section id="vista-calendario" style="display: none;">
+    <div id="calendario"></div>
+  </section>
+
+  <!-- Vista de Estadísticas -->
+  <section id="vista-estadisticas" style="display: none;">
+    <h2>Estadísticas</h2>
+
+    <!-- Sección de Máximos Anotadores -->
+    <article class="estadistica-seccion">
+      <h3>Máximos Anotadores</h3>
+      <table class="tabla-estadisticas">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Jugador</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody id="max-annotadores">
+          <!-- Los datos se llenarán con JavaScript -->
+        </tbody>
+      </table>
+    </article>
+
+    <!-- Sección de Máximos Asistentes -->
+    <article class="estadistica-seccion">
+      <h3>Máximos Asistentes</h3>
+      <table class="tabla-estadisticas">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Jugador</th>
+            <th>Asistencias</th>
+          </tr>
+        </thead>
+        <tbody id="max-asistentes">
+          <!-- Los datos se llenarán con JavaScript -->
+        </tbody>
+      </table>
+    </article>
+
+    <!-- Sección de Máximos Reboteadores -->
+    <article class="estadistica-seccion">
+      <h3>Máximos Reboteadores</h3>
+      <table class="tabla-estadisticas">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Jugador</th>
+            <th>Rebotes</th>
+          </tr>
+        </thead>
+        <tbody id="max-reboteadores">
+          <!-- Los datos se llenarán con JavaScript -->
+        </tbody>
+      </table>
+    </article>
+
+    <!-- Sección de Más Partidos Jugados -->
+    <article class="estadistica-seccion">
+      <h3>Más Partidos Jugados</h3>
+      <table class="tabla-estadisticas">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Jugador</th>
+            <th>Partidos</th>
+          </tr>
+        </thead>
+        <tbody id="mas-partidos">
+          <!-- Los datos se llenarán con JavaScript -->
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <!-- Formulario para crear un partido -->
+  <section class="form-section">
+    <h2>Crear partido</h2>
+    <form id="crear-partido-form">
+      <input type="text" id="campo" placeholder="Campo" required>
+      <input type="date" id="fecha" required>
+      <input type="time" id="hora" required>
+      <button type="button" onclick="crearPartido()">Crear</button>
+    </form>
+  </section>
+
+  <!-- Sección para registrar partido jugado -->
+  <section id="registro-partido-jugado" style="display: none;">
+    <h2>Registro de Partido Jugado</h2>
+    <div id="jugadores-partido"></div>
+    <button onclick="guardarEstadisticas()">Guardar Estadísticas</button>
+  </section>
+
+  <!-- Lista de partidos -->
+  <section id="lista-partidos"></section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
