@@ -1,10 +1,3 @@
-
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = 'https://ljmqmcxgnblqdlphpxti.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
-
 // Variables globales
 let modoAdmin = false;
 let calendario = null;
