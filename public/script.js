@@ -133,7 +133,7 @@ async function eliminarPartido(partidoId) {
 function activarModoAdmin() {
   const pass = prompt("Introduce la contraseña de admin:");
 
-  if (pass === "admin") {
+  if (pass === "gisela") {
     modoAdmin = true;
     obtenerPartidos();
     alert("Modo admin activado.");
